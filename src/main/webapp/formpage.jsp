@@ -17,7 +17,7 @@
 <div class="ui piled segment" style="width:85%; margin-right: auto;
     margin-left: auto;">
     
-<form class="ui form">
+<form class="ui form" action="https://script.google.com/macros/s/AKfycbxz_tnUpylXoQfxS14bs0Hy9Q3wBrX1ux72S56pxDw3KuCWwds/exec" method="post">
   <div class="two fields">
     <div class="field">
       <label>Tapahtuman nimi</label>
@@ -55,11 +55,14 @@
     </div>
     </div>
  
-  <div class="ui submit button">Submit</div>
+ <input class="ui submit button" type="submit" value="Lähetä">
+  
   <div class="ui error message"></div>
 </form>
 </div>
 
+<script data-cfasync="false" type="text/javascript"
+src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 
 </body>
 </html>
