@@ -1,9 +1,9 @@
 /* Tapahtuman luojan tietojen lisääminen */
 
-INSERT INTO Tapahtumanluoja (etunimi, sukunimi, email)
+INSERT INTO TapahtumanLuoja (etunimi, sukunimi, email)
 	VALUES ('Aleksi', 'Ahonen', 'höpöhöpö@gmail.com');
 	
-INSERT INTO Tapahtumanluoja (etunimi, sukunimi, email)
+INSERT INTO TapahtumanLuoja (etunimi, sukunimi, email)
 	VALUES ('Mikko', 'Hallberg', 'jeejee@gmail.com');
 	
 /* Teemojen lisäys */
