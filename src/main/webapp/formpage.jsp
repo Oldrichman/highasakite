@@ -24,24 +24,24 @@
       <input name="tapahtumanimi" placeholder="Tapahtumasi nimi" type="text">
     </div>
     <div class="field">
-      <label>Lis‰‰ oma nimi</label>
+      <label>Oma nimi</label>
       <input name="nimi" placeholder="Nimesi" type="text">
     </div>
     </div>
       <div class="two fields">
     <div class="field">
-      <label>Lis‰‰ p‰iv‰m‰‰r‰</label>
-      <input name="paivamaara" placeholder="p‰iv‰m‰‰r‰" type="date">
+      <label>P‰iv‰m‰‰r‰</label>
+      <input name="paivamaara" placeholder="Tapahtuman p‰iv‰m‰‰r‰" type="date">
     </div>
     <div class="field">
-      <label>Lis‰‰ aika</label>
+      <label>Aika</label>
       <input name="aika" placeholder="Tapahtuman aika" type="time">
     </div>
     </div>
     <div class="two fields">
     <div class="field">
-      <label>Lis‰‰ paikka</label>
-      <input name="tapahtumapaikka" placeholder="Paikka" type="text">
+      <label>Paikka</label>
+      <input name="tapahtumapaikka" placeholder="Tapahtumalle sijainti" type="text">
     </div>
     <div class="field">
       <label>S‰hkˆposti</label>

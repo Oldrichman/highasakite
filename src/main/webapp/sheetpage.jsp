@@ -13,7 +13,9 @@
 <script src="resources/styles/Semantic-UI-CSS-master/components/modal.js"></script>
 </head>
 <body>
-<center><h1 class="ui header" style="margin-top:20px;">Härräste Oy</h1></center>
+<!-- <center><h1 class="ui header" style="margin-top:20px;">Härräste Oy</h1></center> -->
+<img class="ui centered medium circular image" alt="Logo" src="resources/images/Harraste.png"/>
+
 
 <div class="ui piled segment" style="width:85%; margin-right: auto;
     margin-left: auto;">
