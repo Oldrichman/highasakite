@@ -31,7 +31,7 @@ INSERT INTO Paikkakunta (nimi)
 	
 /* Tapahtuman lis‰‰minen */
 	
-INSERT INTO Tapahtuma (paikka, TapNimi, pvm, aika, lisatiedot)
-	VALUES ('Ravintola', 'Viininmaisteluilta', '25-10-2016', '18:00', 'Dresscode: smart casual.');	
+INSERT INTO Tapahtuma (TapLuojaId, teema, paikka, TapNimi, pvm, aika, paikkakunta, lisatiedot)
+	VALUES (2, 2, 'Ravintola', 'Viininmaisteluilta', '25-10-2016', '18:00', 1, 'Dresscode: smart casual.');	
 
 	
