@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Härräste Oy</title>
@@ -12,19 +13,23 @@
 <script src="resources/styles/Semantic-UI-CSS-master/semantic.js"></script>
 <script src="resources/styles/Semantic-UI-CSS-master/components/modal.js"></script>
 </head>
+
 <body>
-<!-- <center><h1 class="ui header" style="margin-top:20px;">Härräste Oy</h1></center> -->
-<img class="ui centered medium circular image" alt="Logo" src="resources/images/Harraste.png"/>
 
+<!-- ylä otsikko/logo -->
+<img class="ui centered medium circular image" style="margin-top:20px;" alt="Härräste Oy" src="resources/images/Harraste.png"/>
 
+<!-- Intro alue -->
 <div class="ui piled segment" style="width:85%; margin-right: auto;
     margin-left: auto;">
-  <h4 class="ui header">Tervetuloa harrastamaan ;)</h4>
+  <center><h2 class="ui header">Tervetuloa harrastamaan ;)</h2></center>
+</br>
 
-<p>Etsi alla olevista tapahtumista mieleisesi tai luo itse uusi tapahtuma. Lähetä meille lomake ja me päivitämme sivut joka päivä klo 23.00. Älä siis lisää tapahtumaa samalle päivälle.</p>
+<center><p>Etsi alla olevista tapahtumista mieleisesi tai luo itse uusi tapahtuma. Lähetä meille lomake ja me päivitämme sivut joka päivä klo 23.00. Älä siis lisää tapahtumaa samalle päivälle.</p></center>
+</br>
 
 <!-- Lisää tapahtuma nappula -->
-<button id="logIn" class="positive ui button">Lisää tapahtuma</button>
+<center><button id="logIn" class="positive ui button">Lisää tapahtuma</button></center>
 
 <!-- Lisää tapahtuma scripti -->
 <script type="text/javascript">$(document).ready(function(){
@@ -32,6 +37,7 @@
         $('#modaldiv').modal('show');    
      });
 });</script>
+
 <!-- Lisää tapahtuma sisältö -->
 <div id="modaldiv" class="ui basic modal">
   <i class="close icon"></i>
@@ -46,18 +52,15 @@
     </div>
   </div>
 </div>
-
 </div>
+<!-- Intro loppuu -->
 
 
 <!-- Tapahtumat -->
-
-<!-- Test grid  -->
-
 <div class="stackable ui grid" style="width:85%; margin-right: auto;
     margin-left: auto;">
-<!--  <div class="ui horizontal segments">  -->
-    
+
+<!-- Yksi tapahtuma -->
 <div class="eight wide column">
  <div class="ui green segment">
 <div class="ui list">
@@ -117,6 +120,8 @@
 </table>
 </div>
 </div>
+
+<!-- Yksi tapahtuma loppuu -->
 
 <div class="eight wide column">
 <div class="ui green segment">
@@ -237,9 +242,9 @@
 </table>
   </div>
   </div>
+  
+  <!-- Tapahtumat loppuu -->
 </div>
     
-
-<!-- test grid loppuu  -->
 </body>
 </html>

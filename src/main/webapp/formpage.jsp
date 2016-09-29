@@ -11,21 +11,57 @@
 <script src="resources/styles/js/jquery-3.1.0.min.js"></script>
 <script src="resources/styles/Semantic-UI-CSS-master/semantic.js"></script>
 <script src="resources/styles/Semantic-UI-CSS-master/components/modal.js"></script>
+
+
+<script type="text/javascript">$(document).ready(function() {
+    $('.ui.dropdown').dropdown();
+});</script>
+<script type="text/javascript" language="javascript">
+function redirect()
+{
+    window.location.href="thankspage.jsp";
+}
+</script>
+
 </head>
 <body>
+
 <center><h1 class="ui header" style="margin-top:20px;">Tapahtuman luominen</h1></center>
 <div class="ui piled segment" style="width:85%; margin-right: auto;
     margin-left: auto;">
-    
+    													<!-- sähköposti googleen -->
 <form class="ui form" action="https://script.google.com/macros/s/AKfycbxz_tnUpylXoQfxS14bs0Hy9Q3wBrX1ux72S56pxDw3KuCWwds/exec" method="post">
   <div class="two fields">
     <div class="field">
       <label>Tapahtuman nimi</label>
       <input name="tapahtumanimi" placeholder="Tapahtumasi nimi" type="text">
     </div>
+    
+<div class="ui form">
+  <div class="field">
+      <label>Tapahtuman tyyppi</label>
+      <div class="ui selection dropdown">
+          <input name="gender" type="hidden">
+          <i class="dropdown icon"></i>
+          <div class="default text">Valitse</div>
+          <div class="menu">
+              <div class="item" data-value="2">Pelit</div>
+              <div class="item" data-value="1">Urheilu</div>
+              <div class="item" data-value="0">Ruoka ja juoma</div>
+          </div>
+      </div>
+  </div>
+</div>
+
+    </div>
+    <div class="two fields">
     <div class="field">
       <label>Oma nimi</label>
       <input name="nimi" placeholder="Nimesi" type="text">
+    </div>
+    <div class="field">
+      <label>Sähköposti</label>
+      <input name="email" placeholder="S-posti" type="email">
     </div>
     </div>
       <div class="two fields">
@@ -43,10 +79,23 @@
       <label>Paikka</label>
       <input name="tapahtumapaikka" placeholder="Tapahtumalle sijainti" type="text">
     </div>
-    <div class="field">
-      <label>Sähköposti</label>
-      <input name="email" placeholder="S-posti" type="email">
-    </div>
+    
+<div class="ui form">
+  <div class="field">
+      <label>Paikkakunta</label>
+      <div class="ui selection dropdown">
+          <input name="gender" type="hidden">
+          <i class="dropdown icon"></i>
+          <div class="default text">Valitse</div>
+          <div class="menu">
+              <div class="item" data-value="2">Helsinki</div>
+              <div class="item" data-value="1">Vantaa</div>
+              <div class="item" data-value="0">Espoo</div>
+          </div>
+      </div>
+  </div>
+</div>
+
     </div>
        <div class="two fields">
     <div class="field">
@@ -54,15 +103,19 @@
       <textarea name="lisatiedot" placeholder="Lisätiedot" type="text" rows="5" cols="10"></textarea>
     </div>
     </div>
+    
  
- <input class="ui submit button" type="submit" value="Lähetä">
-  
+ <input class="ui green submit button" type="submit" value="Lähetä" onclick="redirect();" tabindex="0">
   <div class="ui error message"></div>
+  </div>
+ 
+  
 </form>
 </div>
 
-<script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+<!-- <script data-cfasync="false" type="text/javascript" -->
+<!-- src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script> -->
+
 
 </body>
 </html>
