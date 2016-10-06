@@ -1,12 +1,22 @@
 package fi.hoptimusprime.highasakite.bean;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TapahtumaImpl implements Tapahtuma {
 	private int Tapid, TapLuojaid, teemaId, paikkakuntaid;
-	private String paikka, TapNimi, aika, lisatiedot;
+	private String paikka, TapNimi, aika, lisatiedot, tapluojanimi;
 	private Date pvm;
 	
+	private SimpleDateFormat pvmMuotoilija = new SimpleDateFormat("dd.MM.yyyy");
+	
+	
+	public String getTapluojanimi() {
+		return tapluojanimi;
+	}
+	public void setTapluojanimi(String tapluojanimi) {
+		this.tapluojanimi = tapluojanimi;
+	}
 	
 	public int getTapid() {
 		return Tapid;
@@ -18,7 +28,7 @@ public class TapahtumaImpl implements Tapahtuma {
 		return TapLuojaid;
 	}
 	public void setTapLuojaid(int tapLuojaid) {
-		TapLuojaid = tapLuojaid;
+		this.TapLuojaid = tapLuojaid;
 	}
 	public int getTeemaId() {
 		return teemaId;
@@ -60,6 +70,7 @@ public class TapahtumaImpl implements Tapahtuma {
 		return pvm;
 	}
 	public void setPvm(Date pvm) {
+		pvmMuotoilija.format(pvm);
 		this.pvm = pvm;
 	}
 	

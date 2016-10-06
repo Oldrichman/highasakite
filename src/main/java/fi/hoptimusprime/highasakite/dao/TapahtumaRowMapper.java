@@ -3,6 +3,7 @@ package fi.hoptimusprime.highasakite.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
@@ -17,8 +18,10 @@ public class TapahtumaRowMapper implements RowMapper<Tapahtuma> {
 		t.setPaikka(rs.getString("paikka"));
 		t.setPvm(rs.getDate("pvm"));
 		t.setTapNimi(rs.getString("TapNimi"));
+		t.setTapLuojaid(rs.getInt("TapLuojaId"));
 		
 		return t;
 	}
+
 
 }

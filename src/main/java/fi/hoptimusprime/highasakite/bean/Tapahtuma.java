@@ -30,5 +30,8 @@ public interface Tapahtuma {
 	
 	public abstract Date getPvm();
 	public abstract void setPvm(Date pvm);
+	
+	public abstract String getTapluojanimi();
+	public abstract void setTapluojanimi(String tapluojanimi);
 
 }
