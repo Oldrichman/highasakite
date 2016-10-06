@@ -121,10 +121,9 @@
    </div>
       <div class="ui active tab" data-tab="1tr">
 
- <table class="ui fixed padded green table" style="width:90%;"> 
- <table class="ui fixed green table" style="width:90%;"> 
+ <table class="ui fixed padded green table" style="width:90%;">
   <thead>
-    <tr><th><i class="green info icon"></i>Lisätietoja</th>
+	<tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
   <tbody>
     <tr>
@@ -346,7 +345,7 @@
 <div class="ui tab" data-tab="6tr">Osallistujat</div>
 </div>
 </div> 
-</div>   
+  </div> 
   <!-- Tapahtumat loppuu -->
 
 
