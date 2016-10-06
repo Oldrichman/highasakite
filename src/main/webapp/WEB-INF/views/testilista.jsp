@@ -12,8 +12,11 @@
 </head>
 <body>
 
-<c:forEach items="${tapahtumat}" var="t">
+<c:forEach items="${tapahtumia}" var="t">
 <c:out value="${t.tapNimi}"/>
+<c:out value="${t.pvm}"/>
+<c:out value="${t.aika}"/>
+<c:out value="${t.lisatiedot}"/>
 </c:forEach>
 
 </body>

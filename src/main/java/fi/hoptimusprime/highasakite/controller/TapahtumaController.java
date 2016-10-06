@@ -32,10 +32,11 @@ public class TapahtumaController {
 	
 	//TAPAHTUMATIETOJEN NÄYTTÄMINEN
 	@RequestMapping(value="listaus", method=RequestMethod.GET)
-	public String getView(@PathVariable Model model){
+	public String getView(/*@PathVariable*/ Model model){
+		System.out.println("tätä kutsuttiin");
 		List <Tapahtuma> tapahtumat = tdao.haeKaikki();
-		model.addAttribute("tapahtumat", tapahtumat);
-		return "views/testilista";
+		model.addAttribute("tapahtumia", tapahtumat);
+		return "testilista";
 	}
 	
 

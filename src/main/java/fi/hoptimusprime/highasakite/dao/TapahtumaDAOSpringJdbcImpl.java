@@ -7,16 +7,15 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
+
+
 import org.springframework.stereotype.Repository;
 
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
 
+@Repository
 public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 	
 	@Inject
