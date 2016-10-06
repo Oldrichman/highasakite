@@ -22,7 +22,7 @@
 <a href="tapahtumat/listaus">Tervetuloa</a>
 -->
 <!-- footer -->
-<div class="ui inverted vertical footer segment form-page" style="margin-top:20px;">
+<div class="ui inverted vertical footer segment form-page" style="margin-top:45px;">
 	<div class="ui container">
 	Härräste Oy &emsp; karvakeisari@gmail.com &emsp; All Rights Reserved
 	</div>
