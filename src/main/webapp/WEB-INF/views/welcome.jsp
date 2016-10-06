@@ -15,14 +15,16 @@
 <body>
 <!-- Etusivun logo -->
 <img class="ui centered huge circular image" style="margin-top:20px;" alt="Härräste Oy" src="resources/images/Harraste.png"/>
+<div class="ui basic segment">
 <form method="get" action="sheetpage.jsp">
 <center><button class="massive positive ui button">Tervetuloa</button></center>
 </form>
+</div>
 <!--  Linkki testisivulle
 <a href="tapahtumat/listaus">Tervetuloa</a>
 -->
 <!-- footer -->
-<div class="ui inverted vertical footer segment form-page" style="margin-top:45px;">
+<div class="ui inverted vertical footer segment form-page" style="margin-top:0px;">
 	<div class="ui container">
 	Härräste Oy &emsp; karvakeisari@gmail.com &emsp; All Rights Reserved
 	</div>
