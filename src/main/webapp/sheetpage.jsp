@@ -12,6 +12,19 @@
 <script src="resources/styles/js/jquery-3.1.0.min.js"></script>
 <script src="resources/styles/Semantic-UI-CSS-master/semantic.js"></script>
 <script src="resources/styles/Semantic-UI-CSS-master/components/modal.js"></script>
+
+
+<!-- Lisää tapahtuma scripti -->
+<script type="text/javascript">$(document).ready(function(){
+     $('#logIn').click(function(){
+        $('#modaldiv').modal('show');    
+     });
+});</script>
+<!-- tabular script -->
+<script type="text/javascript">$(document).ready(function(){
+    $('.demo.menu .item').tab({history:false});
+});
+</script>
 </head>
 
 <body>
@@ -30,13 +43,6 @@
 
 <!-- Lisää tapahtuma nappula -->
 <center><button id="logIn" class="positive ui button">Lisää tapahtuma</button></center>
-
-<!-- Lisää tapahtuma scripti -->
-<script type="text/javascript">$(document).ready(function(){
-     $('#logIn').click(function(){
-        $('#modaldiv').modal('show');    
-     });
-});</script>
 
 <!-- Lisää tapahtuma sisältö -->
 <div id="modaldiv" class="ui basic modal">
@@ -62,7 +68,8 @@
 
 <!-- Yksi tapahtuma -->
 <div class="eight wide column">
- <div class="ui green segment">
+<div class="ui green segment">
+
 <div class="ui list">
   <div class="item">
     <i class="big green hand lizard icon"></i>
@@ -74,19 +81,19 @@
   
 <div class="ui horizontal list">
   <div class="item">
-    <i class="marker icon"></i>
+    <i class="red marker icon"></i>
     <div class="content">
       Baari
     </div>
   </div>
    <div class="item">
-    <i class="calendar icon"></i>
+    <i class="orange calendar icon"></i>
     <div class="content">
       09.10.2016
     </div>
   </div>
         <div class="item">
-    <i class="clock icon"></i>
+    <i class="orange clock icon"></i>
     <div class="content">
       08:00
     </div>
@@ -95,22 +102,28 @@
   
  <div class="ui list"> 
   <div class="item">
-    <i class="user icon"></i>
+    <i class="green user icon"></i>
     <div class="content">
       Aleksi Ahonen
     </div>
   </div>
    <div class="item">
-    <i class="mail icon"></i>
+    <i class="green mail icon"></i>
     <div class="content">
       <a href="mailto:jack@semantic-ui.com">höpöhöpö@harraste.com</a>
     </div>
   </div>
 </div>  
 
- <table class="ui fixed table" style="width:90%;"> 
+<div class="ui pointing secondary demo menu">
+                <a class="active red item" data-tab="1tr">Lisätietoja</a>
+   				<a class="blue item" data-tab="2tr">Osallistujat</a>
+   </div>
+      <div class="ui active tab" data-tab="1tr">
+
+ <table class="ui fixed padded green table" style="width:90%;"> 
   <thead>
-    <tr><th><i class="info icon"></i>Lisätietoja</th>
+    <tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
   <tbody>
     <tr>
@@ -118,6 +131,8 @@
     </tr>
   </tbody>
 </table>
+</div>
+<div class="ui tab" data-tab="2tr">Osallistujat</div>
 </div>
 </div>
 
@@ -125,67 +140,77 @@
 
 <div class="eight wide column">
 <div class="ui green segment">
- <div class="ui list">
+
+<div class="ui list">
   <div class="item">
     <i class="big green hand lizard icon"></i>
     <div class="content">
-      <h1>NFL</h1>
+      <h1>Lätkää</h1>
     </div>
   </div>
   </div>
   
 <div class="ui horizontal list">
   <div class="item">
-    <i class="marker icon"></i>
+    <i class="red marker icon"></i>
     <div class="content">
-      Baari
+      O'Learys
     </div>
   </div>
    <div class="item">
-    <i class="calendar icon"></i>
+    <i class="orange calendar icon"></i>
     <div class="content">
-      09.10.2016
+      18.11.2016
     </div>
   </div>
         <div class="item">
-    <i class="clock icon"></i>
+    <i class="orange clock icon"></i>
     <div class="content">
-      08:00
+      19:00
     </div>
   </div>
  </div>
   
  <div class="ui list"> 
   <div class="item">
-    <i class="user icon"></i>
+    <i class="green user icon"></i>
     <div class="content">
-      Aleksi Ahonen
+      Mikko Hallberg
     </div>
   </div>
    <div class="item">
-    <i class="mail icon"></i>
+    <i class="green mail icon"></i>
     <div class="content">
-      <a href="mailto:jack@semantic-ui.com">höpöhöpö@harraste.com</a>
+      <a href="mailto:jack@semantic-ui.com">mikko.mallikas@gmail.com</a>
     </div>
   </div>
 </div>  
 
- <table class="ui fixed table" style="width:90%;"> 
+<div class="ui pointing secondary demo menu">
+                <a class="active red item" data-tab="3tr">Lisätietoja</a>
+   				<a class="blue item" data-tab="4tr">Osallistujat</a>
+   </div>
+      <div class="ui active tab" data-tab="3tr">
+
+ <table class="ui fixed padded green table" style="width:90%;"> 
   <thead>
-    <tr><th><i class="info icon"></i>Lisätietoja</th>
+    <tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
   <tbody>
     <tr>
-      <td>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ym­päristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle. Muutoin on talolla avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan kautta, olivat langenneet sille osaksi jo ison jaon käydessä entisinä aikoina. Silloinpa Jukolan isäntä, pitäen enemmän huolta jälkeentulevainsa edusta kuin omasta parhaastansa, otti vastaan osaksensa kulon polttaman metsän ja sai sillä keinolla seitsemän vertaa enemmän kuin toiset naapurinsa. Mutta kaikki kulovalkean jäljet olivat jo kadonneet hänen piiristänsä ja tuuhea metsä kasvanut sijaan. - Ja tämä on niiden seitsemän veljen koto, joiden elämänvaiheita tässä nyt käyn kertoilemaan.</td>
+      <td>Hello! Haluaisin seuraa lätkäkatsomoon. Go Go Ruotsi!!</td>
     </tr>
   </tbody>
 </table>
-  </div>
-  </div>
+</div>
+<div class="ui tab" data-tab="4tr">Osallistujat</div>
+</div>
+</div>
   
 <div class="eight wide column">
 <div class="ui green segment">
-  <div class="ui list">
+
+<div class="ui list">
   <div class="item">
     <i class="big green hand lizard icon"></i>
     <div class="content">
@@ -196,19 +221,19 @@
   
 <div class="ui horizontal list">
   <div class="item">
-    <i class="marker icon"></i>
+    <i class="red marker icon"></i>
     <div class="content">
       Baari
     </div>
   </div>
    <div class="item">
-    <i class="calendar icon"></i>
+    <i class="orange calendar icon"></i>
     <div class="content">
       09.10.2016
     </div>
   </div>
         <div class="item">
-    <i class="clock icon"></i>
+    <i class="orange clock icon"></i>
     <div class="content">
       08:00
     </div>
@@ -217,22 +242,28 @@
   
  <div class="ui list"> 
   <div class="item">
-    <i class="user icon"></i>
+    <i class="green user icon"></i>
     <div class="content">
       Aleksi Ahonen
     </div>
   </div>
    <div class="item">
-    <i class="mail icon"></i>
+    <i class="green mail icon"></i>
     <div class="content">
       <a href="mailto:jack@semantic-ui.com">höpöhöpö@harraste.com</a>
     </div>
   </div>
 </div>  
 
- <table class="ui fixed table" style="width:90%;"> 
+<div class="ui pointing secondary demo menu">
+                <a class="active red item" data-tab="5tr">Lisätietoja</a>
+   				<a class="blue item" data-tab="6tr">Osallistujat</a>
+   </div>
+      <div class="ui active tab" data-tab="5tr">
+
+ <table class="ui fixed padded green table" style="width:90%;"> 
   <thead>
-    <tr><th><i class="info icon"></i>Lisätietoja</th>
+    <tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
   <tbody>
     <tr>
@@ -240,11 +271,90 @@
     </tr>
   </tbody>
 </table>
+</div>
+<div class="ui tab" data-tab="6tr">Osallistujat</div>
+</div>
+</div>
+
+ 
+<div class="eight wide column">
+<div class="ui green segment">
+
+<div class="ui list">
+  <div class="item">
+    <i class="big green hand lizard icon"></i>
+    <div class="content">
+      <h1>NFL</h1>
+    </div>
   </div>
   </div>
   
-  <!-- Tapahtumat loppuu -->
+<div class="ui horizontal list">
+  <div class="item">
+    <i class="red marker icon"></i>
+    <div class="content">
+      Baari
+    </div>
+  </div>
+   <div class="item">
+    <i class="orange calendar icon"></i>
+    <div class="content">
+      09.10.2016
+    </div>
+  </div>
+        <div class="item">
+    <i class="orange clock icon"></i>
+    <div class="content">
+      08:00
+    </div>
+  </div>
+ </div>
+  
+ <div class="ui list"> 
+  <div class="item">
+    <i class="green user icon"></i>
+    <div class="content">
+      Aleksi Ahonen
+    </div>
+  </div>
+   <div class="item">
+    <i class="green mail icon"></i>
+    <div class="content">
+      <a href="mailto:jack@semantic-ui.com">höpöhöpö@harraste.com</a>
+    </div>
+  </div>
+</div>  
+
+<div class="ui pointing secondary demo menu">
+                <a class="active red item" data-tab="5tr">Lisätietoja</a>
+   				<a class="blue item" data-tab="6tr">Osallistujat</a>
+   </div>
+      <div class="ui active tab" data-tab="5tr">
+
+ <table class="ui fixed padded green table" style="width:90%;"> 
+  <thead>
+    <tr><th><i class="green info icon"></i>Lisätietoja</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ym­päristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle. Muutoin on talolla avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan kautta, olivat langenneet sille osaksi jo ison jaon käydessä entisinä aikoina. Silloinpa Jukolan isäntä, pitäen enemmän huolta jälkeentulevainsa edusta kuin omasta parhaastansa, otti vastaan osaksensa kulon polttaman metsän ja sai sillä keinolla seitsemän vertaa enemmän kuin toiset naapurinsa. Mutta kaikki kulovalkean jäljet olivat jo kadonneet hänen piiristänsä ja tuuhea metsä kasvanut sijaan. - Ja tämä on niiden seitsemän veljen koto, joiden elämänvaiheita tässä nyt käyn kertoilemaan.</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-    
+<div class="ui tab" data-tab="6tr">Osallistujat</div>
+</div>
+</div> 
+</div>   
+  <!-- Tapahtumat loppuu -->
+
+
+  <!-- footer -->
+<div class="ui inverted vertical footer segment form-page" style="margin-top:20px;">
+  <div class="ui container">
+    Härräste Oy &emsp; karvakeisarit@gmail.com &emsp; All Rights Reserved
+  </div>
+</div>
+
 </body>
 </html>
