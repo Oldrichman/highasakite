@@ -121,7 +121,7 @@
    </div>
       <div class="ui active tab" data-tab="1tr">
 
- <table class="ui fixed padded green table" style="width:90%;">
+ <table class="ui very basic collapsing celled green table" style="width:90%;">
   <thead>
 	<tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
@@ -132,7 +132,24 @@
   </tbody>
 </table>
 </div>
-<div class="ui tab" data-tab="2tr">Osallistujat</div>
+<div class="ui tab" data-tab="2tr">
+ <table class="ui very basic collapsing celled green table" style="width:90%;">
+  <thead>
+	<tr><th><i class="green users icon"></i>Osallistujat</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>Mikko</td>
+    </tr>
+    <tr>
+      <td>Kati</td>
+    </tr>
+    <tr>
+      <td>Oskari</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 </div>
 
@@ -192,7 +209,7 @@
    </div>
       <div class="ui active tab" data-tab="3tr">
 
- <table class="ui fixed padded green table" style="width:90%;"> 
+ <table class="ui very basic collapsing celled green table" style="width:90%;"> 
   <thead>
     <tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
@@ -203,7 +220,24 @@
   </tbody>
 </table>
 </div>
-<div class="ui tab" data-tab="4tr">Osallistujat</div>
+<div class="ui tab" data-tab="4tr">
+ <table class="ui very basic collapsing celled green table" style="width:90%;">
+  <thead>
+	<tr><th><i class="green users icon"></i>Osallistujat</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 </div>
   
@@ -261,9 +295,9 @@
    </div>
       <div class="ui active tab" data-tab="5tr">
 
- <table class="ui fixed padded green table" style="width:90%;"> 
+ <table class="ui very basic collapsing celled green table" style="width:90%;">
   <thead>
-    <tr><th><i class="green info icon"></i>Lisätietoja</th>
+	<tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
   <tbody>
     <tr>
@@ -272,7 +306,24 @@
   </tbody>
 </table>
 </div>
-<div class="ui tab" data-tab="6tr">Osallistujat</div>
+<div class="ui tab" data-tab="6tr">
+ <table class="ui very basic collapsing celled green table" style="width:90%;">
+  <thead>
+	<tr><th><i class="green users icon"></i>Osallistujat</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>Mikko</td>
+    </tr>
+    <tr>
+      <td>Kati</td>
+    </tr>
+    <tr>
+      <td>Oskari</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 </div>
 
@@ -326,14 +377,14 @@
 </div>  
 
 <div class="ui pointing secondary demo menu">
-                <a class="active red item" data-tab="5tr">Lisätietoja</a>
-   				<a class="blue item" data-tab="6tr">Osallistujat</a>
+                <a class="active red item" data-tab="7tr">Lisätietoja</a>
+   				<a class="blue item" data-tab="8tr">Osallistujat</a>
    </div>
-      <div class="ui active tab" data-tab="5tr">
+      <div class="ui active tab" data-tab="7tr">
 
- <table class="ui fixed padded green table" style="width:90%;"> 
+ <table class="ui very basic collapsing celled green table" style="width:90%;">
   <thead>
-    <tr><th><i class="green info icon"></i>Lisätietoja</th>
+	<tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
   <tbody>
     <tr>
@@ -342,9 +393,27 @@
   </tbody>
 </table>
 </div>
-<div class="ui tab" data-tab="6tr">Osallistujat</div>
+<div class="ui tab" data-tab="8tr">
+ <table class="ui very basic collapsing celled green table" style="width:90%;">
+  <thead>
+	<tr><th><i class="green users icon"></i>Osallistujat</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>Mikko</td>
+    </tr>
+    <tr>
+      <td>Kati</td>
+    </tr>
+    <tr>
+      <td>Oskari</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div> 
+</div>
+</div>
+ 
   </div> 
   <!-- Tapahtumat loppuu -->
 
