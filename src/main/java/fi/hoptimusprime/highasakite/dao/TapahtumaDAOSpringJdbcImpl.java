@@ -51,6 +51,7 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 		String sql = "select paikka, TapLuojaId, TapNimi, pvm, aika, lisatiedot from Tapahtuma";
 		RowMapper<Tapahtuma> mapper = new TapahtumaRowMapper();
 		List<Tapahtuma> tapahtumat = jdbcTemplate.query(sql, mapper);
+		
 		for(int i = 0; i < tapahtumat.size(); i++) {
 			TapahtumaLuoja luoja = etsi(tapahtumat.get(i).getTapLuojaid());
 			tapahtumat.get(i).setTapluojanimi(luoja.getEtunimi() + " " + luoja.getSukunimi());
