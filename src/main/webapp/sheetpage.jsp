@@ -108,7 +108,7 @@
   </div>
 </div>  
 
- <table class="ui fixed table" style="width:90%;"> 
+ <table class="ui fixed green table" style="width:90%;"> 
   <thead>
     <tr><th><i class="info icon"></i>Lisätietoja</th>
   </tr></thead>
