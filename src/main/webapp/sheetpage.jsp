@@ -87,13 +87,13 @@
     </div>
   </div>
    <div class="item">
-    <i class="orange calendar icon"></i>
+    <i class="red calendar icon"></i>
     <div class="content">
       09.10.2016
     </div>
   </div>
         <div class="item">
-    <i class="orange clock icon"></i>
+    <i class="red clock icon"></i>
     <div class="content">
       08:00
     </div>
@@ -117,7 +117,7 @@
 
 <div class="ui pointing secondary demo menu">
                 <a class="active red item" data-tab="1tr">Lisätietoja</a>
-   				<a class="blue item" data-tab="2tr">Osallistujat</a>
+   				<a class="green item" data-tab="2tr">Osallistujat</a>
    </div>
       <div class="ui active tab" data-tab="1tr">
 
