@@ -115,7 +115,6 @@
   </div>
 </div>  
 
-<<<<<<< HEAD
 <div class="ui pointing secondary demo menu">
                 <a class="active red item" data-tab="1tr">Lisätietoja</a>
    				<a class="blue item" data-tab="2tr">Osallistujat</a>
@@ -123,9 +122,7 @@
       <div class="ui active tab" data-tab="1tr">
 
  <table class="ui fixed padded green table" style="width:90%;"> 
-=======
  <table class="ui fixed green table" style="width:90%;"> 
->>>>>>> 92c5ff992c4032af22a88a1e07dacd03a79f07ad
   <thead>
     <tr><th><i class="green info icon"></i>Lisätietoja</th>
   </tr></thead>
