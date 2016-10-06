@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< f93cdeb34bd60c736f39f3cf1a3863eaa819fa17
-Built-By: a1500899
-=======
-Built-By: a1500937
->>>>>>> fixed repositories and dao works in test runs
+Built-By: a1500910
 Build-Jdk: 1.8.0_77
 Created-By: Maven Integration for Eclipse
 
