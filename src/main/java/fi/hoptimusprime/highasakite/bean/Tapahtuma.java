@@ -33,5 +33,8 @@ public interface Tapahtuma {
 	
 	public abstract String getTapluojanimi();
 	public abstract void setTapluojanimi(String tapluojanimi);
+	
+	public abstract String getTapluojaemail();
+	public abstract void setTapluojaemail(String tapluojaemail);
 
 }

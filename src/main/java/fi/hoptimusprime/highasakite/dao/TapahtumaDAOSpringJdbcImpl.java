@@ -55,6 +55,7 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 		for(int i = 0; i < tapahtumat.size(); i++) {
 			TapahtumaLuoja luoja = etsi(tapahtumat.get(i).getTapLuojaid());
 			tapahtumat.get(i).setTapluojanimi(luoja.getEtunimi() + " " + luoja.getSukunimi());
+			tapahtumat.get(i).setTapluojaemail(luoja.getEmail());
 		}
 		
 		return tapahtumat;

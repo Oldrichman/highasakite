@@ -5,11 +5,10 @@ import java.util.Date;
 
 public class TapahtumaImpl implements Tapahtuma {
 	private int Tapid, TapLuojaid, teemaId, paikkakuntaid;
-	private String paikka, TapNimi, aika, lisatiedot, tapluojanimi;
+	private String paikka, TapNimi, aika, lisatiedot, tapluojanimi, tapluojaemail;
 	private Date pvm;
 	
 	private SimpleDateFormat pvmMuotoilija = new SimpleDateFormat("dd.MM.yyyy");
-	
 	
 	public String getTapluojanimi() {
 		return tapluojanimi;
@@ -66,14 +65,21 @@ public class TapahtumaImpl implements Tapahtuma {
 	public void setLisatiedot(String lisatiedot) {
 		this.lisatiedot = lisatiedot;
 	}
+	
 	public Date getPvm() {
 		return pvm;
 	}
-	public void setPvm(Date pvm) {
-		pvmMuotoilija.format(pvm);
+	
+	public void setPvm(Date pvm){
 		this.pvm = pvm;
 	}
 	
+	public String getTapluojaemail() {
+		return tapluojaemail;
+	}
+	public void setTapluojaemail(String tapluojaemail) {
+		this.tapluojaemail = tapluojaemail;
+	}
 	@Override
 	public String toString() {
 		return "TapahtumaImpl [Tapid=" + Tapid + ", TapLuojaid=" + TapLuojaid
