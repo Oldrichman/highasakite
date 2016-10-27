@@ -1,20 +1,30 @@
 package fi.hoptimusprime.highasakite.bean;
 
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
+import java.util.List;
 
 public class TapahtumaImpl implements Tapahtuma {
 	private int Tapid, TapLuojaid, teemaId, paikkakuntaid;
 	private String paikka, TapNimi, aika, lisatiedot, tapluojanimi, tapluojaemail;
 	private Date pvm;
-	
-	private SimpleDateFormat pvmMuotoilija = new SimpleDateFormat("dd.MM.yyyy");
+	private List<Osallistuja> osallistujat;
 	
 	public String getTapluojanimi() {
 		return tapluojanimi;
 	}
+	
 	public void setTapluojanimi(String tapluojanimi) {
 		this.tapluojanimi = tapluojanimi;
+	}
+	
+	
+	public List<Osallistuja> getOsallistujat() {
+		return osallistujat;
+	}
+
+	public void setOsallistujat(List<Osallistuja> osallistujat) {
+		this.osallistujat = osallistujat;
 	}
 	
 	public int getTapid() {

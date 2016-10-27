@@ -13,6 +13,7 @@ public class TapahtumaRowMapper implements RowMapper<Tapahtuma> {
 	
 	public Tapahtuma mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Tapahtuma t = new TapahtumaImpl();
+		t.setTapid(rs.getInt("TapId"));
 		t.setAika(rs.getString("aika"));
 		t.setLisatiedot(rs.getString("lisatiedot"));
 		t.setPaikka(rs.getString("paikka"));

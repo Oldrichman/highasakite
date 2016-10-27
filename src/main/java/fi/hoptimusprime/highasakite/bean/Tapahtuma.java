@@ -1,6 +1,7 @@
 package fi.hoptimusprime.highasakite.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public interface Tapahtuma {
 	
@@ -36,5 +37,9 @@ public interface Tapahtuma {
 	
 	public abstract String getTapluojaemail();
 	public abstract void setTapluojaemail(String tapluojaemail);
+	
+	public abstract List<Osallistuja> getOsallistujat();
+	public abstract void setOsallistujat(List<Osallistuja> osallistujat);
+	
 
 }

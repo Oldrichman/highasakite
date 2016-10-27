@@ -142,17 +142,16 @@
  <table class="ui very basic collapsing celled green table" style="width:90%;">
   <thead>
 	<tr><th><i class="green users icon"></i>Osallistujat</th>
-  </tr></thead>
+  	</tr>
+  </thead>
   <tbody>
-    <tr>
-      <td>Mikko</td>
+  
+ <c:forEach items="${t.osallistujat}" var="os">
+  	<tr>
+    <td><c:out value="${os.etunimi}"/> <c:out value="${os.sukunimi}"/></td> 
     </tr>
-    <tr>
-      <td>Kati</td>
-    </tr>
-    <tr>
-      <td>Oskari</td>
-    </tr>
+  </c:forEach> 
+    
   </tbody>
 </table>
 </div>
