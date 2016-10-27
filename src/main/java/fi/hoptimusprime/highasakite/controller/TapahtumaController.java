@@ -36,7 +36,7 @@ public class TapahtumaController {
 		System.out.println("tätä kutsuttiin");
 		List <Tapahtuma> tapahtumat = tdao.haeKaikki();
 		model.addAttribute("tapahtumia", tapahtumat);
-		return "testilista";
+		return "sheetpage";
 	}
 	
 
