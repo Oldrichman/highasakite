@@ -26,6 +26,27 @@ function redirect()
 </head>
 <body>
 
+
+<!-- Tämä teksti kuuluu sheet pagelle heti alkuun bodyn sisään -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<div id="modaldiv" class="ui basic modal">
+  <i class="close icon"></i>
+  <div class="header">
+  </div>
+  <div class="image content">
+    <div class="description">
+    <!-- Google forms -->
+      <p>
+      <!--  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfM2NrOnk9C6-QTlsxvFOSFaebscdx--X6NYOlkdbAA2NrFpA/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe> -->
+      <iframe src="formpage.jsp" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe></p>
+    </div>
+  </div>
+</div>
+</div>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- Osio loppuu -->
+
+
 <center><h1 class="ui header" style="margin-top:20px;">Tapahtuman luominen</h1></center>
 <div class="ui piled segment" style="width:85%; margin-right: auto;
     margin-left: auto;">
