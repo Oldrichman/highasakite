@@ -37,3 +37,22 @@ FOREIGN KEY(TapLuojaId) REFERENCES TapahtumanLuoja(id),
 FOREIGN KEY(teema) REFERENCES Teema(teemaId),
 FOREIGN KEY(paikkakunta) REFERENCES Paikkakunta(paikkaId),
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE Osallistuja
+(
+id INT NOT NULL AUTO_INCREMENT,
+etunimi VARCHAR (45) NOT NULL,
+sukunimi VARCHAR (45) NOT NULL,
+email VARCHAR (45) NOT NULL,
+PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE TapahtumaOsallistuja
+(
+osallistuja_id INT NOT NULL,
+tapahtuma_id INT NOT NULL,
+PRIMARY KEY(osallistuja_id, tapahtuma_id),
+FOREIGN KEY(osallistuja_id) REFERENCES Osallistuja(id),
+FOREIGN KEY(tapahtuma_id) REFERENCES Tapahtuma(TapId)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
