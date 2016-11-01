@@ -16,7 +16,7 @@
 <!-- Etusivun logo -->
 <img class="ui centered huge circular image" style="margin-top:20px;" alt="Härräste Oy" src="resources/images/Harraste.png"/>
 <div class="ui basic segment">
-<form method="get" action="sheetpage.jsp">
+<form method="get" action="tapahtumat/listaus">
 <center><button class="massive positive ui button">Tervetuloa</button></center>
 </form>
 </div>
