@@ -8,10 +8,10 @@ import org.springframework.jdbc.core.RowMapper;
 import fi.hoptimusprime.highasakite.bean.Osallistuja;
 import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 
-public class OsallistujaRowMapper implements RowMapper<Osallistuja> {
+public class OsallistujaRowMapper implements RowMapper<OsallistujaImpl> {
 
-	public Osallistuja mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Osallistuja ol = new OsallistujaImpl();
+	public OsallistujaImpl mapRow(ResultSet rs, int rowNum) throws SQLException {
+		OsallistujaImpl ol = new OsallistujaImpl();
 		ol.setId(rs.getInt("id"));
 		ol.setEtunimi(rs.getString("etunimi"));
 		ol.setSukunimi(rs.getString("sukunimi"));

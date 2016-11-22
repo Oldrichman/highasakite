@@ -38,8 +38,8 @@ public interface Tapahtuma {
 	public abstract String getTapluojaemail();
 	public abstract void setTapluojaemail(String tapluojaemail);
 	
-	public abstract List<Osallistuja> getOsallistujat();
-	public abstract void setOsallistujat(List<Osallistuja> osallistujat);
+	public abstract List<OsallistujaImpl> getOsallistujat();
+	public abstract void setOsallistujat(List<OsallistujaImpl> osallistujat);
 	
 
 }

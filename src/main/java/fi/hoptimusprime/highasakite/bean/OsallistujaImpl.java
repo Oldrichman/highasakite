@@ -1,6 +1,6 @@
 package fi.hoptimusprime.highasakite.bean;
 
-public class OsallistujaImpl implements Osallistuja {
+public class OsallistujaImpl {
 	
 	private int id;
 	private String etunimi, sukunimi, email;

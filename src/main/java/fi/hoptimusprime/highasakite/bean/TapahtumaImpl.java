@@ -8,7 +8,7 @@ public class TapahtumaImpl implements Tapahtuma {
 	private int Tapid, TapLuojaid, teemaId, paikkakuntaid;
 	private String paikka, TapNimi, aika, lisatiedot, tapluojanimi, tapluojaemail;
 	private Date pvm;
-	private List<Osallistuja> osallistujat;
+	private List<OsallistujaImpl> osallistujat;
 	
 	public String getTapluojanimi() {
 		return tapluojanimi;
@@ -19,11 +19,11 @@ public class TapahtumaImpl implements Tapahtuma {
 	}
 	
 	
-	public List<Osallistuja> getOsallistujat() {
+	public List<OsallistujaImpl> getOsallistujat() {
 		return osallistujat;
 	}
 
-	public void setOsallistujat(List<Osallistuja> osallistujat) {
+	public void setOsallistujat(List<OsallistujaImpl> osallistujat) {
 		this.osallistujat = osallistujat;
 	}
 	

@@ -24,12 +24,7 @@
         $('#modaldiv').modal('show');    
      });
 });</script>
-<script type="text/javascript">$(document).ready(function(){
-     $('#Join')
-     .click(function(){
-        $('#modaldiv2').modal('show');    
-     });
-});</script>
+
 <!-- tabular script -->
 <script type="text/javascript">$(document).ready(function(){
     $('.demo.menu .item').tab({history:false});
@@ -259,6 +254,34 @@ function redirect()
   </tbody>
 </table>
 </div>
+
+<!-- liittyminen -->
+
+<div id="liity_lomake" modelAttribute="osallistuja" method="post" style="padding:10px; border-style:solid; border-line:1px; border-radius:10px">
+<fieldset>	
+<legend>Tietosi</legend>
+ 
+ <div class="form-group">
+  <label for="etunimi">Etunimi:</label>
+  <input type="text" class="form-control" id="etunimi">
+  </div>
+ 
+ <div class="form-group">
+  <label for="sukunimi">Sukunimi:</label>
+  <input type="text" class="form-control" id="sukunimi">
+  </div>
+  
+ <div class="form-group">
+  <label for="email">Sähköposti:</label>
+  <input type="email" class="form-control" id="email">
+ </div>
+ 
+<button id="liity" type="submit" class="btn btn-default">Liity</button>
+</fieldset>
+</div>
+
+<!-- liittyminen loppuu -->
+
 </div>
 </div>
 </c:forEach>
@@ -266,47 +289,49 @@ function redirect()
 
 <!-- Yksi tapahtuma loppuu -->
 
-<!-- liity alkaa -->
-<div id="modaldiv2" class="ui basic modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Liity tapahtumaan
-  </div>
-  <div class="image content">
-    <div class="ui medium image">
-      <img src="">
-    </div>
-    <div class="description">
-      <div class="ui header"></div>
-      <p></p>
-      <p></p>
-    </div>
-<div class="ui segment">
-  <div class="ui inverted input">
-    <input name="etunimi" placeholder="Etunimi" type="text">
-  </div>
-  <div class="ui inverted divider"></div>
-  <div class="ui inverted input">
-    <input name="sukunimi" placeholder="Sukunimi" type="text">
-  </div>
-</div>
-  </div>
-  <div class="actions">
-    <div class="ui positive right labeled icon button">
-      Liity
-      <i class="checkmark icon"></i>
-    </div>
-  </div>
-</div>
-<!-- liity loppuu -->
-
-
   <!-- footer -->
 <div class="ui inverted vertical footer segment form-page" style="margin-top:20px;">
   <div class="ui container">
     Härräste Oy &emsp; karvakeisarit@gmail.com &emsp; All Rights Reserved
   </div>
 </div>
+<script>
+$(document).ready(function(){
+	
+	//piilottaa liittymislomakkeen aluksi
+    $("#liity_lomake").hide();
+    
+	
+	//Avaa liittymislomakkeen painiketta painaessa
+    $("#Join").on('click',function(){
+        $("#liity_lomake").toggle('slow');
+        
+        $("#liity").on('click',function Tallenna(){
+        	var varFname="heippa";//$('#fname').val();
+        	    
+        	   var json = { "etunimi" : varFname, "id" : -1, "sukunimi" : "suku", "email" : "maili@me.fi"};
 
+        	   $.ajax({
+        	        url: "talleta",
+        	        data: JSON.stringify(json),
+        	        type: "POST",
+        	         
+        	        beforeSend: function(xhr) {
+        	            xhr.setRequestHeader("Accept", "application/json");
+        	            xhr.setRequestHeader("Content-Type", "application/json");
+        	        },
+        	        success: function(res) {
+        	            alert("success: "+res);      
+        	        },
+             	   error : function(err) {
+   	                alert("opps: "+err.responseText);
+   	            	}
+        	    });
+        })
+      })
+      
+    
+}); 
+</script>
 </body>
 </html>

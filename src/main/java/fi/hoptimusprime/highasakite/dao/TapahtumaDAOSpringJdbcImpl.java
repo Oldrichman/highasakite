@@ -9,10 +9,14 @@ import javax.inject.Inject;
 
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import fi.hoptimusprime.highasakite.bean.Osallistuja;
+import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
 import fi.hoptimusprime.highasakite.bean.TapahtumaLuoja;
 
@@ -43,17 +47,44 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 	                                  
 
 	}
-	public List<Osallistuja> etsiOsallistujat(Tapahtuma t) {
+	
+	public void talleta(Osallistuja ol) {
+		final String sql = "insert into Osallistuja (etunimi, sukunimi, email) values(?,?,?)";
+		
+		final String etunimi = ol.getEtunimi();
+		final String sukunimi = ol.getSukunimi();
+		final String email = ol.getEmail();
+		
+		KeyHolder idHolder = new GeneratedKeyHolder();
+		
+		jdbcTemplate.update(
+	    	    new PreparedStatementCreator() {
+	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"id"});
+	    	            ps.setString(1, etunimi);
+	    	            ps.setString(2, sukunimi);
+	    	            ps.setString(3, email);
+	    	            return ps;
+	    	        }
+	    	    }, idHolder);
+		
+		ol.setId(idHolder.getKey().intValue());
+	}
+	
+	
+	public List<OsallistujaImpl> etsiOsallistujat(Tapahtuma t) {
 		String sql = "SELECT id, etunimi, sukunimi, email FROM Osallistuja LEFT JOIN TapahtumaOsallistuja ON  Osallistuja.id = TapahtumaOsallistuja.osallistuja_id WHERE tapahtuma_id = ?";
 		Object[] parametrit = new Object[] { t.getTapid() };
-		RowMapper<Osallistuja> mapper = new OsallistujaRowMapper();
+		RowMapper<OsallistujaImpl> mapper = new OsallistujaRowMapper();
 		
-		List<Osallistuja> osallistujat = jdbcTemplate.query(sql , parametrit, mapper);
+		List<OsallistujaImpl> osallistujat = jdbcTemplate.query(sql , parametrit, mapper);
 	    
 	    return osallistujat;
 	                                  
 
 	}
+	
+	
 
 // TAPAHTUMIEN TULOSTUS
 	
