@@ -307,26 +307,14 @@ $(document).ready(function(){
         $("#liity_lomake").toggle('slow');
         
         $("#liity").on('click',function Tallenna(){
-        	var varFname="heippa";//$('#fname').val();
-        	    
-        	   var json = { "etunimi" : varFname, "id" : -1, "sukunimi" : "suku", "email" : "maili@me.fi"};
+        	var varFname= $('#etunimi').val();
+        	var varSname= $('#sukunimi').val();
+        	var varEmail= $('#email').val();
+        	
+        	   $.get( "talleta?etunimi="+varFname+"&sukunimi="+varSname+"&email="+varEmail, function( data ) {
+        		   alert( "Lisäys onnistui!" );
+        		 });
 
-        	   $.ajax({
-        	        url: "talleta",
-        	        data: JSON.stringify(json),
-        	        type: "POST",
-        	         
-        	        beforeSend: function(xhr) {
-        	            xhr.setRequestHeader("Accept", "application/json");
-        	            xhr.setRequestHeader("Content-Type", "application/json");
-        	        },
-        	        success: function(res) {
-        	            alert("success: "+res);      
-        	        },
-             	   error : function(err) {
-   	                alert("opps: "+err.responseText);
-   	            	}
-        	    });
         })
       })
       

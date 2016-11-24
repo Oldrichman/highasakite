@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import fi.hoptimusprime.highasakite.bean.Osallistuja;
 import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
 import fi.hoptimusprime.highasakite.dao.TapahtumaDAO;
@@ -63,12 +63,14 @@ public class TapahtumaController {
 	//OSALLISTUJAN LISÄÄMINEN TAPAHTUMAAN
 
 	
-	@RequestMapping(value="talleta", method=RequestMethod.POST, 
-            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    
-    public ResponseEntity<String> talleta(@ModelAttribute String osallistuja/*OsallistujaImpl osallistuja*/) {
-		System.out.println("muuttuja2: "+osallistuja.toString());
-		//tdao.talleta(osallistuja);
+	@RequestMapping(value="talleta", method=RequestMethod.GET)
+    public ResponseEntity<String> talleta(@RequestParam(value = "etunimi") String etunimi, @RequestParam(value = "sukunimi")String sukunimi, @RequestParam(value = "email") String email) {
+		System.out.println("Tietokantaan lisätty osallistuja: "+etunimi+" "+sukunimi+", "+email+".");
+		OsallistujaImpl osallistuja = new OsallistujaImpl();
+		osallistuja.setEtunimi(etunimi);
+		osallistuja.setSukunimi(sukunimi);
+		osallistuja.setEmail(email);
+		tdao.talleta(osallistuja);
 		return new ResponseEntity<String>(HttpStatus.OK);//("redirect:/tapahtumat/listaus");
 	}
 	

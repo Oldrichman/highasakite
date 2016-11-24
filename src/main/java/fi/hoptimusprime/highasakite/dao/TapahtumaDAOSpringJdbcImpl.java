@@ -15,7 +15,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import fi.hoptimusprime.highasakite.bean.Osallistuja;
+
 import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
 import fi.hoptimusprime.highasakite.bean.TapahtumaLuoja;
@@ -48,7 +48,7 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 
 	}
 	
-	public void talleta(Osallistuja ol) {
+	public void talleta(OsallistujaImpl ol) {
 		final String sql = "insert into Osallistuja (etunimi, sukunimi, email) values(?,?,?)";
 		
 		final String etunimi = ol.getEtunimi();

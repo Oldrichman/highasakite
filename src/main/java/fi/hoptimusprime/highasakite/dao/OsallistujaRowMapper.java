@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import fi.hoptimusprime.highasakite.bean.Osallistuja;
 import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 
 public class OsallistujaRowMapper implements RowMapper<OsallistujaImpl> {
