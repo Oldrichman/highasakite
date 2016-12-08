@@ -24,12 +24,7 @@
         $('#modaldiv').modal('show');    
      });
 });</script>
-<script type="text/javascript">$(document).ready(function(){
-     $('#Join')
-     .click(function(){
-        $('#modaldiv2').modal('show');    
-     });
-});</script>
+
 <!-- tabular script -->
 <script type="text/javascript">$(document).ready(function(){
     $('.demo.menu .item').tab({history:false});
@@ -179,6 +174,7 @@ function redirect()
   <div class="item">
     <i class="big green hand lizard icon"></i>
     <div class="content">
+    <input type="hidden" id="tapahtuma_id" value="<c:out value="${t.tapid}"/>"/> 
       <h1><c:out value="${t.tapNimi}"/></h1>
     </div>
   </div>
@@ -271,6 +267,7 @@ function redirect()
   
 </div>
 
+
   
 <!-- Yksi tapahtuma loppuu -->
 
@@ -279,40 +276,37 @@ function redirect()
 </div>
 <!-- Event area loppuu -->
 
-<!-- liity alkaa -->
-<div id="modaldiv2" class="ui basic modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Liity tapahtumaan
-  </div>
-  <div class="image content">
-    <div class="ui medium image">
-      <img src="">
-    </div>
-    <div class="description">
-      <div class="ui header"></div>
-      <p></p>
-      <p></p>
-    </div>
-<div class="ui segment">
-  <div class="ui inverted input">
-    <input name="etunimi" placeholder="Etunimi" type="text">
-  </div>
-  <div class="ui inverted divider"></div>
-  <div class="ui inverted input">
-    <input name="sukunimi" placeholder="Sukunimi" type="text">
-  </div>
-</div>
-  </div>
-  <div class="actions">
-    <div class="ui positive right labeled icon button">
-      Liity
-      <i class="checkmark icon"></i>
-    </div>
-  </div>
-</div>
-<!-- liity loppuu -->
+<!-- liittyminen -->
 
+
+<div id="liity_lomake" modelAttribute="osallistuja" method="post" style="padding:10px; border-style:solid; border-line:1px; border-radius:10px">
+<fieldset>	
+<legend>Tietosi</legend>
+ 
+ <div class="form-group">
+  <label for="etunimi">Etunimi:</label>
+  <input type="text" class="form-control" id="etunimi">
+  </div>
+ 
+ <div class="form-group">
+  <label for="sukunimi">Sukunimi:</label>
+  <input type="text" class="form-control" id="sukunimi">
+  </div>
+  
+ <div class="form-group">
+  <label for="email">Sähköposti:</label>
+  <input type="email" class="form-control" id="email">
+ </div>
+ 
+<button id="liity" type="submit" class="btn btn-default" value="${t.tapid}">Liity</button>
+</fieldset>
+</div>
+
+<!-- liittyminen loppuu -->
+
+
+
+<!-- Yksi tapahtuma loppuu -->
 
   <!-- footer -->
 <div class="ui inverted vertical footer segment form-page" style="margin-top:20px;">
@@ -320,6 +314,37 @@ function redirect()
     Härräste Oy &emsp; karvakeisarit@gmail.com &emsp; All Rights Reserved
   </div>
 </div>
-
+<script>
+$(document).ready(function(){
+	
+	//piilottaa liittymislomakkeen aluksi
+    $("#liity_lomake").hide();
+    
+	
+	//Avaa liittymislomakkeen painiketta painaessa
+    $("#Join").on('click',function(){
+        $("#liity_lomake").toggle('slow');
+     });
+      
+    // Ottaa lomakkeelta tiedot ja välittää ne TapahtumaControllerille
+    $("#liity").on('click',function Tallenna(){
+     	var varFname= $('#etunimi').val();
+     	var varSname= $('#sukunimi').val();
+     	var varEmail= $('#email').val();
+     	var varTapId= $(this).attr("value");
+     	
+     	
+     	   $.get( "tapahtumaosallistuja?etunimi="+varFname+"&sukunimi="+varSname+"&email="+varEmail+"&tapahtumaId="+varTapId, function( data ) {
+     		   alert( "Lisäys onnistui!" );
+     		 });
+     	   
+     /*	var varTapId= $('#tapahtuma_id').val();
+     	   
+     	   $.get( "tapahtumaosallistuja?tapahtuma_id="+varTapId+"&sukunimi="+varSname, function( data ) {
+     		   alert( "Lisäys onnistui!" );
+     		 }); */
+     });
+}); 
+</script>
 </body>
 </html>
