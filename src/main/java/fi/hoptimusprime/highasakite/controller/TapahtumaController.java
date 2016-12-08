@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
+import fi.hoptimusprime.highasakite.bean.TapahtumaImpl;
 import fi.hoptimusprime.highasakite.dao.TapahtumaDAO;
 
 
@@ -69,11 +70,33 @@ public class TapahtumaController {
 		OsallistujaImpl osallistuja = new OsallistujaImpl();
 		osallistuja.setEtunimi(etunimi);
 		osallistuja.setSukunimi(sukunimi);
-		osallistuja.setEmail(email);
+		osallistuja.setEmail(email); 
 		tdao.talleta(osallistuja);
 		return new ResponseEntity<String>(HttpStatus.OK);//("redirect:/tapahtumat/listaus");
 	}
 	
+	@RequestMapping(value="tapahtumaosallistuja", method=RequestMethod.GET)
+	 public ResponseEntity<String> tapahtumaosallistuja(@RequestParam(value = "etunimi") String etunimi, @RequestParam(value = "sukunimi")String sukunimi, @RequestParam(value = "email") String email) {
+
+		System.out.println("Tietokantaan lis‰tty osallistuja: "+etunimi+" "+sukunimi+", "+email+".");
+		System.out.println("Osallistujan lis‰‰minen tapahtumaan onnistui");
+		OsallistujaImpl osallistuja = new OsallistujaImpl();
+		TapahtumaImpl tapahtuma = new TapahtumaImpl();
+		
+		osallistuja.setEtunimi(etunimi);
+		osallistuja.setSukunimi(sukunimi);
+		osallistuja.setEmail(email);
+		tapahtuma.setTapid(tapahtuma.getTapid());
+	
+		tdao.talleta(osallistuja);
+		tdao.TalletaOsallistujaTapahtumaan(osallistuja, tapahtuma);
+		
+	//	model.addAttribute("osallistuja", osallistuja);
+	//	model.addAttribute("tapahtuma", tapahtuma);
+		
+		/*return "sheetpage";*/
+		return new ResponseEntity<String>(HttpStatus.OK);
+	}
 
 
 }

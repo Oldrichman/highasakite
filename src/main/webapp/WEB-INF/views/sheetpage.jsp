@@ -174,6 +174,7 @@ function redirect()
   <div class="item">
     <i class="big green hand lizard icon"></i>
     <div class="content">
+    <html:hidden property="tapahtuma_id" id="tapahtuma_id" value="<c:out value="${t.tapid}"/>"/>
       <h1><c:out value="${t.tapNimi}"/></h1>
     </div>
   </div>
@@ -276,7 +277,7 @@ function redirect()
   <input type="email" class="form-control" id="email">
  </div>
  
-<button id="liity" type="submit" class="btn btn-default">Liity</button>
+<button id="liity" type="submit" class="btn btn-default" value="${t.tapid}">Liity</button>
 </fieldset>
 </div>
 
@@ -305,17 +306,24 @@ $(document).ready(function(){
 	//Avaa liittymislomakkeen painiketta painaessa
     $("#Join").on('click',function(){
         $("#liity_lomake").toggle('slow');
-        
-        $("#liity").on('click',function Tallenna(){
+      
+    // Ottaa lomakkeelta tiedot ja v‰litt‰‰ ne TapahtumaControllerille
+       $("#liity").on('click',function Tallenna(){
         	var varFname= $('#etunimi').val();
         	var varSname= $('#sukunimi').val();
         	var varEmail= $('#email').val();
+        
         	
-        	   $.get( "talleta?etunimi="+varFname+"&sukunimi="+varSname+"&email="+varEmail, function( data ) {
+        	   $.get( "tapahtumaosallistuja?etunimi="+varFname+"&sukunimi="+varSname+"&email="+varEmail, function( data ) {
         		   alert( "Lis‰ys onnistui!" );
         		 });
-
-        })
+        	   
+        /*	var varTapId= $('#tapahtuma_id').val();
+        	   
+        	   $.get( "tapahtumaosallistuja?tapahtuma_id="+varTapId+"&sukunimi="+varSname, function( data ) {
+        		   alert( "Lis‰ys onnistui!" );
+        		 }); */
+        }) 
       })
       
     

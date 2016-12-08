@@ -16,8 +16,10 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 
+
 import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
+import fi.hoptimusprime.highasakite.bean.TapahtumaImpl;
 import fi.hoptimusprime.highasakite.bean.TapahtumaLuoja;
 
 @Repository
@@ -71,6 +73,33 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 		ol.setId(idHolder.getKey().intValue());
 	}
 	
+	public void TalletaOsallistujaTapahtumaan(OsallistujaImpl ol, TapahtumaImpl ti) {
+		
+		final String sql = "INSERT INTO TapahtumaOsallistuja (osallistuja_id, tapahtuma_id) VALUES (?,?) "
+						 + "SELECT o.id, t.tapId "
+						 + "FROM Osallistuja o "  
+						 + "INNER JOIN Tapahtuma t ON o.id = t.tapId";
+		
+		final int OsallistujaId = ol.getId();
+		final int TapahtumaId = ti.getTapid();
+		
+		
+		KeyHolder idHolder = new GeneratedKeyHolder();
+		
+		jdbcTemplate.update(
+	    	    new PreparedStatementCreator() {
+	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"osallistuja", "tapahtuma"});
+	    	            ps.setInt(1, OsallistujaId);
+	    	            ps.setInt(2, TapahtumaId);
+	    	            return ps;
+	    	        }
+	    	    }, idHolder);
+		
+		ol.setId(idHolder.getKey().intValue());
+		ti.setTapid(idHolder.getKey().intValue());
+	}
+	 
 	
 	public List<OsallistujaImpl> etsiOsallistujat(Tapahtuma t) {
 		String sql = "SELECT id, etunimi, sukunimi, email FROM Osallistuja LEFT JOIN TapahtumaOsallistuja ON  Osallistuja.id = TapahtumaOsallistuja.osallistuja_id WHERE tapahtuma_id = ?";
