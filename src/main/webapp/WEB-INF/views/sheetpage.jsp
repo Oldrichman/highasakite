@@ -149,8 +149,7 @@ function redirect()
     </div>
     
  
- <input class="ui green submit button" type="submit" value="Lähe
- tä" onclick="redirect();" tabindex="0">
+ <input class="ui green submit button" type="submit" value="Lähetä" onclick="redirect();" tabindex="0" style="float: right">
   <div class="ui error message"></div>
   </div>
  
@@ -168,13 +167,14 @@ function redirect()
 <!-- Tapahtumat -->
 <div class="stackable ui grid" style="width:85%; margin-right: auto;
     margin-left: auto;">
-
 <c:forEach items="${tapahtumia}" var="t">
+<div class="eight wide column">
+
 
 <!-- Yksi tapahtuma -->
-<div class="eight wide column">
-<div class="ui green segment">
+<div class="ui green segments">
 
+  <div class="ui segment">
 <div class="ui list">
   <div class="item">
     <i class="big green hand lizard icon"></i>
@@ -183,8 +183,10 @@ function redirect()
     </div>
   </div>
   </div>
+  </div>
   
-<div class="ui horizontal list">
+  <div class="ui segment">
+        <div class="ui horizontal list">
   <div class="item">
     <i class="red marker icon"></i>
     <div class="content">
@@ -204,8 +206,7 @@ function redirect()
     </div>
   </div>
  </div>
-  
- <div class="ui list"> 
+  <div class="ui list"> 
   <div class="item">
     <i class="green user icon"></i>
     <div class="content">
@@ -218,35 +219,29 @@ function redirect()
       <a href="mailto:jack@semantic-ui.com"><c:out value="${t.tapluojaemail}"/></a>
     </div>
   </div>
-     <div class="item">
-    
-    <div class="content">
-      <button id="Join" class="positive ui button" style="float: right">Liity</button>
-    </div>
-  </div>
-</div>  
-
-
-
-<div class="ui pointing secondary demo menu">
-                <a class="active red item" data-tab="1tr">Lisätietoja</a>
-   				<a class="green item" data-tab="2tr">Osallistujat</a>
-   </div>
-      <div class="ui active tab" data-tab="1tr">
-
- <table class="ui very basic collapsing celled green table" style="width:90%;">
-  <thead>
-	<tr><th><i class="green info icon"></i>Lisätietoja</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td><c:out value="${t.lisatiedot}"/></td>
-    </tr>
-  </tbody>
-</table>
 </div>
-<div class="ui tab" data-tab="2tr">
- <table class="ui very basic collapsing celled green table" style="width:90%;">
+  </div>
+  
+  <div class="ui horizontal segments">
+     <div class="ui segment">
+    <div class="ui list">
+  <div class="item" >
+    <table class="ui very basic collapsing celled green table" style="width:auto;">
+<thead>
+	<tr><th><i class="green info icon"></i>Lisätietoja</th>
+  </tr>
+  </thead>
+  </table>
+    <div class="content">
+      <p><c:out value="${t.lisatiedot}"/></p>
+    </div>
+   </div>
+  </div>
+  </div>
+    
+
+    <div class="ui segment">
+   <table class="ui very basic collapsing celled green table" style="width:auto;">
   <thead>
 	<tr><th><i class="green users icon"></i>Osallistujat</th>
   </tr></thead>
@@ -254,17 +249,35 @@ function redirect()
  <c:forEach items="${t.osallistujat}" var="os">
   	<tr>
     <td><c:out value="${os.etunimi}"/> <c:out value="${os.sukunimi}"/></td> 
-    </tr>
-  </c:forEach>
-  </tbody>
+    </tr> 
+  </c:forEach> 
+  </tbody> 
 </table>
+    </div>
+  </div>
+  
+  <div class="ui segment">
+    <div class="ui list">
+  <div class="item" >
+
+     <div class="content">
+    <button id="Join" class="positive ui button" style="float: right">Liity
+      <i class="right chevron icon"></i>
+      </button>
+  </div>
+   </div>
+  </div>
+  </div>
+  
 </div>
-</div>
+
+  
+<!-- Yksi tapahtuma loppuu -->
+
 </div>
 </c:forEach>
 </div>
-
-<!-- Yksi tapahtuma loppuu -->
+<!-- Event area loppuu -->
 
 <!-- liity alkaa -->
 <div id="modaldiv2" class="ui basic modal">
