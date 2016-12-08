@@ -11,6 +11,6 @@ public interface TapahtumaDAO {
 	
 	public abstract List<Tapahtuma> haeKaikki();
 	
-	public abstract void talleta (OsallistujaImpl osallistuja);
+	public abstract void talleta (OsallistujaImpl osallistuja, Integer tapahtumaId);
 	public abstract void TalletaOsallistujaTapahtumaan(OsallistujaImpl ol, TapahtumaImpl ti);
 }

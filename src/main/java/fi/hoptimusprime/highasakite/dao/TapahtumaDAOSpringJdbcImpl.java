@@ -50,12 +50,13 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 
 	}
 	
-	public void talleta(OsallistujaImpl ol) {
+	public void talleta(OsallistujaImpl ol, Integer tapahtumaId) {
 		final String sql = "insert into Osallistuja (etunimi, sukunimi, email) values(?,?,?)";
 		
 		final String etunimi = ol.getEtunimi();
 		final String sukunimi = ol.getSukunimi();
 		final String email = ol.getEmail();
+		
 		
 		KeyHolder idHolder = new GeneratedKeyHolder();
 		
@@ -71,6 +72,17 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 	    	    }, idHolder);
 		
 		ol.setId(idHolder.getKey().intValue());
+		
+		final Integer id = tapahtumaId;
+		
+		final String sql2 = ("INSERT INTO TapahtumaOsallistuja (osallistuja_id, tapahtuma_id) VALUES ("+idHolder.getKey().intValue()+","+id+")");
+		jdbcTemplate.update(
+	    	    new PreparedStatementCreator() {
+	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+	    	            PreparedStatement ps = connection.prepareStatement(sql2);
+	    	            return ps;
+	    	        }
+	    	    });
 	}
 	
 	public void TalletaOsallistujaTapahtumaan(OsallistujaImpl ol, TapahtumaImpl ti) {
@@ -78,7 +90,8 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 		final String sql = "INSERT INTO TapahtumaOsallistuja (osallistuja_id, tapahtuma_id) VALUES (?,?) "
 						 + "SELECT o.id, t.tapId "
 						 + "FROM Osallistuja o "  
-						 + "INNER JOIN Tapahtuma t ON o.id = t.tapId";
+						 + "INNER JOIN Tapahtuma t ON o.id = t.tapId"
+						 +" WHERE o.id="+ol.getId();
 		
 		final int OsallistujaId = ol.getId();
 		final int TapahtumaId = ti.getTapid();

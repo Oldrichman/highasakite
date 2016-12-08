@@ -64,7 +64,7 @@ public class TapahtumaController {
 	//OSALLISTUJAN LISÄÄMINEN TAPAHTUMAAN
 
 	
-	@RequestMapping(value="talleta", method=RequestMethod.GET)
+	/*@RequestMapping(value="talleta", method=RequestMethod.GET)
     public ResponseEntity<String> talleta(@RequestParam(value = "etunimi") String etunimi, @RequestParam(value = "sukunimi")String sukunimi, @RequestParam(value = "email") String email) {
 		System.out.println("Tietokantaan lisätty osallistuja: "+etunimi+" "+sukunimi+", "+email+".");
 		OsallistujaImpl osallistuja = new OsallistujaImpl();
@@ -73,28 +73,23 @@ public class TapahtumaController {
 		osallistuja.setEmail(email); 
 		tdao.talleta(osallistuja);
 		return new ResponseEntity<String>(HttpStatus.OK);//("redirect:/tapahtumat/listaus");
-	}
+	}*/
 	
 	@RequestMapping(value="tapahtumaosallistuja", method=RequestMethod.GET)
-	 public ResponseEntity<String> tapahtumaosallistuja(@RequestParam(value = "etunimi") String etunimi, @RequestParam(value = "sukunimi")String sukunimi, @RequestParam(value = "email") String email) {
+	 public ResponseEntity<String> tapahtumaosallistuja(@RequestParam(value = "etunimi") String etunimi, @RequestParam(value = "sukunimi")String sukunimi, @RequestParam(value = "email") String email, @RequestParam(value ="tapahtumaId") int tapahtumaId) {
 
 		System.out.println("Tietokantaan lisätty osallistuja: "+etunimi+" "+sukunimi+", "+email+".");
 		System.out.println("Osallistujan lisääminen tapahtumaan onnistui");
 		OsallistujaImpl osallistuja = new OsallistujaImpl();
-		TapahtumaImpl tapahtuma = new TapahtumaImpl();
+		//TapahtumaImpl tapahtuma;
+		
 		
 		osallistuja.setEtunimi(etunimi);
 		osallistuja.setSukunimi(sukunimi);
 		osallistuja.setEmail(email);
-		tapahtuma.setTapid(tapahtuma.getTapid());
 	
-		tdao.talleta(osallistuja);
-		tdao.TalletaOsallistujaTapahtumaan(osallistuja, tapahtuma);
-		
-	//	model.addAttribute("osallistuja", osallistuja);
-	//	model.addAttribute("tapahtuma", tapahtuma);
-		
-		/*return "sheetpage";*/
+		tdao.talleta(osallistuja, tapahtumaId);
+
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 
