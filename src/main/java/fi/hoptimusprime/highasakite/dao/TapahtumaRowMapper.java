@@ -24,5 +24,4 @@ public class TapahtumaRowMapper implements RowMapper<Tapahtuma> {
 		return t;
 	}
 
-
 }

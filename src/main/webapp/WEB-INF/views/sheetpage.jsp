@@ -69,7 +69,7 @@ function redirect()
 <div class="ui piled segment" style="width:85%; margin-right: auto;
     margin-left: auto;">
     													<!-- sähköposti googleen -->
-<form class="ui form" action="https://script.google.com/macros/s/AKfycbxz_tnUpylXoQfxS14bs0Hy9Q3wBrX1ux72S56pxDw3KuCWwds/exec" method="post">
+<form class="ui form" action="/tapahtumat/tapahtumat/lisaatapahtuma" id="lisaatapahtuma" method="post">
   <div class="two fields">
     <div class="field">
       <label>Tapahtuman nimi</label>
@@ -80,7 +80,7 @@ function redirect()
   <div class="field">
       <label>Tapahtuman tyyppi</label>
       <div class="ui selection dropdown">
-          <input name="gender" type="hidden">
+          <input name="teema" type="hidden">
           <i class="dropdown icon"></i>
           <div class="default text">Valitse</div>
           <div class="menu">
@@ -123,7 +123,7 @@ function redirect()
   <div class="field">
       <label>Paikkakunta</label>
       <div class="ui selection dropdown">
-          <input name="gender" type="hidden">
+          <input name="paikkakunta" type="hidden">
           <i class="dropdown icon"></i>
           <div class="default text">Valitse</div>
           <div class="menu">

@@ -1,5 +1,6 @@
 package fi.hoptimusprime.highasakite.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -90,6 +91,23 @@ public class TapahtumaController {
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 	
-
+	@RequestMapping(value="lisaatapahtuma", method=RequestMethod.GET)
+	public ResponseEntity<String> lisaatapahtuma(@RequestParam(value = "teema") Integer teema, @RequestParam(value = "tapahtumapaikka") String paikka, @RequestParam(value = "tapahtumanimi") String tapahtumanimi, @RequestParam(value = "paivamaara") Date pvm, @RequestParam(value = "aika") String aika, @RequestParam(value = "paikkakunta") Integer paikkakunta, @RequestParam(value = "lisatiedot") String lisatiedot){
+		
+		System.out.println("Tietokantaan lisätty tapahtuma: " +teema+" "+paikka+" "+ pvm);
+		TapahtumaImpl tapahtuma = new TapahtumaImpl();
+		
+		tapahtuma.setTeemaId(teema);
+		tapahtuma.setPaikka(paikka);
+		tapahtuma.setTapNimi(tapahtumanimi);
+		tapahtuma.setPvm(pvm);
+		tapahtuma.setAika(aika);
+		tapahtuma.setPaikkakuntaid(paikkakunta);
+		tapahtuma.setLisatiedot(lisatiedot);
+		
+		tdao.luoTapahtuma(tapahtuma);
+		
+		return new ResponseEntity<String>(HttpStatus.OK);
+	}
 
 }
