@@ -3,6 +3,7 @@ package fi.hoptimusprime.highasakite.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,8 +15,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-
-
 
 import fi.hoptimusprime.highasakite.bean.OsallistujaImpl;
 import fi.hoptimusprime.highasakite.bean.Tapahtuma;
@@ -46,8 +45,37 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 	    l = jdbcTemplate.queryForObject(sql , parametrit, mapper);
 	    
 	    return l;
-	                                  
-
+	}
+	
+	public void luoTapahtuma(TapahtumaImpl tl){
+		final String sql = "insert into Tapahtuma (teema, paikka, TapNimi, pvm, aika, paikkakunta, lisatiedot) values (?,?,?,?,?,?,?)";
+		
+		final Integer teema = tl.getTeemaId();
+		final String paikka = tl.getPaikka();
+		final String tapNimi = tl.getTapNimi();
+		final Date pvm = tl.getPvm();
+		final String aika = tl.getAika();
+		final Integer paikkakunta = tl.getPaikkakuntaid();
+		final String lisatiedot = tl.getLisatiedot();
+		
+		KeyHolder idHolder = new GeneratedKeyHolder();
+		
+		jdbcTemplate.update(
+	    	    new PreparedStatementCreator() {
+	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"id"});
+	    	            ps.setInt(1, teema);
+	    	            ps.setString(2, paikka);
+	    	            ps.setString(3, tapNimi);
+	    	            ps.setDate(4, new java.sql.Date(pvm.getTime()));
+	    	            ps.setString(5, aika);
+	    	            ps.setInt(6, paikkakunta);
+	    	            ps.setString(7, lisatiedot);
+	    	            return ps;
+	    	        }
+	    	    }, idHolder);
+		
+		tl.setTapid(idHolder.getKey().intValue());
 	}
 	
 	public void talleta(OsallistujaImpl ol, Integer tapahtumaId) {
@@ -85,7 +113,7 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 	    	    });
 	}
 	
-	public void TalletaOsallistujaTapahtumaan(OsallistujaImpl ol, TapahtumaImpl ti) {
+	/*public void TalletaOsallistujaTapahtumaan(OsallistujaImpl ol, TapahtumaImpl ti) {
 		
 		final String sql = "INSERT INTO TapahtumaOsallistuja (osallistuja_id, tapahtuma_id) VALUES (?,?) "
 						 + "SELECT o.id, t.tapId "
@@ -111,7 +139,7 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 		
 		ol.setId(idHolder.getKey().intValue());
 		ti.setTapid(idHolder.getKey().intValue());
-	}
+	}*/
 	 
 	
 	public List<OsallistujaImpl> etsiOsallistujat(Tapahtuma t) {
@@ -122,11 +150,8 @@ public class TapahtumaDAOSpringJdbcImpl implements TapahtumaDAO{
 		List<OsallistujaImpl> osallistujat = jdbcTemplate.query(sql , parametrit, mapper);
 	    
 	    return osallistujat;
-	                                  
 
 	}
-	
-	
 
 // TAPAHTUMIEN TULOSTUS
 	

@@ -62,8 +62,7 @@ public class TapahtumaController {
 		}
 	
 	//OSALLISTUJAN LISÄÄMINEN TAPAHTUMAAN
-
-	
+		
 	/*@RequestMapping(value="talleta", method=RequestMethod.GET)
     public ResponseEntity<String> talleta(@RequestParam(value = "etunimi") String etunimi, @RequestParam(value = "sukunimi")String sukunimi, @RequestParam(value = "email") String email) {
 		System.out.println("Tietokantaan lisätty osallistuja: "+etunimi+" "+sukunimi+", "+email+".");
@@ -81,8 +80,6 @@ public class TapahtumaController {
 		System.out.println("Tietokantaan lisätty osallistuja: "+etunimi+" "+sukunimi+", "+email+".");
 		System.out.println("Osallistujan lisääminen tapahtumaan onnistui");
 		OsallistujaImpl osallistuja = new OsallistujaImpl();
-		//TapahtumaImpl tapahtuma;
-		
 		
 		osallistuja.setEtunimi(etunimi);
 		osallistuja.setSukunimi(sukunimi);
@@ -92,6 +89,7 @@ public class TapahtumaController {
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
+	
 
 
 }
