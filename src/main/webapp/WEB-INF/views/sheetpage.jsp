@@ -163,13 +163,14 @@ function redirect()
 <!-- Tapahtumat -->
 <div class="stackable ui grid" style="width:85%; margin-right: auto;
     margin-left: auto;">
-
 <c:forEach items="${tapahtumia}" var="t">
+<div class="eight wide column">
+
 
 <!-- Yksi tapahtuma -->
-<div class="eight wide column">
-<div class="ui green segment">
+<div class="ui green segments">
 
+  <div class="ui segment">
 <div class="ui list">
   <div class="item">
     <i class="big green hand lizard icon"></i>
@@ -179,8 +180,10 @@ function redirect()
     </div>
   </div>
   </div>
+  </div>
   
-<div class="ui horizontal list">
+  <div class="ui segment">
+        <div class="ui horizontal list">
   <div class="item">
     <i class="red marker icon"></i>
     <div class="content">
@@ -200,8 +203,7 @@ function redirect()
     </div>
   </div>
  </div>
-  
- <div class="ui list"> 
+  <div class="ui list"> 
   <div class="item">
     <i class="green user icon"></i>
     <div class="content">
@@ -214,35 +216,29 @@ function redirect()
       <a href="mailto:jack@semantic-ui.com"><c:out value="${t.tapluojaemail}"/></a>
     </div>
   </div>
-     <div class="item">
-    
-    <div class="content">
-      <button id="Join" class="positive ui button" style="float: right">Liity</button>
-    </div>
-  </div>
-</div>  
-
-
-
-<div class="ui pointing secondary demo menu">
-                <a class="active red item" data-tab="1tr">Lisätietoja</a>
-   				<a class="green item" data-tab="2tr">Osallistujat</a>
-   </div>
-      <div class="ui active tab" data-tab="1tr">
-
- <table class="ui very basic collapsing celled green table" style="width:90%;">
-  <thead>
-	<tr><th><i class="green info icon"></i>Lisätietoja</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td><c:out value="${t.lisatiedot}"/></td>
-    </tr>
-  </tbody>
-</table>
 </div>
-<div class="ui tab" data-tab="2tr">
- <table class="ui very basic collapsing celled green table" style="width:90%;">
+  </div>
+  
+  <div class="ui horizontal segments">
+     <div class="ui segment">
+    <div class="ui list">
+  <div class="item" >
+    <table class="ui very basic collapsing celled green table" style="width:auto;">
+<thead>
+	<tr><th><i class="green info icon"></i>Lisätietoja</th>
+  </tr>
+  </thead>
+  </table>
+    <div class="content">
+      <p><c:out value="${t.lisatiedot}"/></p>
+    </div>
+   </div>
+  </div>
+  </div>
+    
+
+    <div class="ui segment">
+   <table class="ui very basic collapsing celled green table" style="width:auto;">
   <thead>
 	<tr><th><i class="green users icon"></i>Osallistujat</th>
   </tr></thead>
@@ -250,38 +246,47 @@ function redirect()
  <c:forEach items="${t.osallistujat}" var="os">
   	<tr>
     <td><c:out value="${os.etunimi}"/> <c:out value="${os.sukunimi}"/></td> 
-    </tr>
-  </c:forEach>
-  </tbody>
+    </tr> 
+  </c:forEach> 
+  </tbody> 
 </table>
-</div>
+    </div>
+  </div>
+  
+  <div class="ui segment">
+    <div class="ui list">
+  <div class="item" >
 
-<!-- liittyminen -->
-
-<div id="liity_lomake" modelAttribute="osallistuja" method="post" style="padding:10px; border-style:solid; border-line:1px; border-radius:10px">
+   <div class="content">
+    <div id="" modelAttribute="osallistuja" method="post">
 <fieldset>	
-<legend>Tietosi</legend>
+<legend><h3>Tietosi</h3></legend>
  
- <div class="form-group">
-  <label for="etunimi">Etunimi:</label>
-  <input type="text" class="form-control" id="etunimi">
+ <div class="field">
+  <label for="etunimi"></label>
+  <input type="text" class="form-control" placeholder="Etunimi" id="etunimi">
   </div>
  
  <div class="form-group">
-  <label for="sukunimi">Sukunimi:</label>
-  <input type="text" class="form-control" id="sukunimi">
+  <label for="sukunimi"></label>
+  <input type="text" class="form-control" placeholder="Sukunimi" id="sukunimi">
   </div>
   
  <div class="form-group">
-  <label for="email">Sähköposti:</label>
-  <input type="email" class="form-control" id="email">
+  <label for="email"></label>
+  <input type="email" class="form-control" placeholder="Sähköposti" id="email">
  </div>
  
-<button id="liity" type="submit" class="btn btn-default" value="${t.tapid}">Liity</button>
+<button id="liity" type="submit" class="positive ui button" value="${t.tapid}">Liity</button>
 </fieldset>
 </div>
+      
+  </div>
+   </div>
+  </div>
+</div>
 
-<!-- liittyminen loppuu -->
+
 
 </div>
 </div>
@@ -300,13 +305,13 @@ function redirect()
 $(document).ready(function(){
 	
 	//piilottaa liittymislomakkeen aluksi
-    $("#liity_lomake").hide();
+   // $("#liity_lomake").hide();
     
 	
 	//Avaa liittymislomakkeen painiketta painaessa
-    $("#Join").on('click',function(){
-        $("#liity_lomake").toggle('slow');
-     });
+  //  $("#Join").on('click',function(){
+    //    $("#liity_lomake").toggle('slow');
+     //});
       
     // Ottaa lomakkeelta tiedot ja välittää ne TapahtumaControllerille
     $("#liity").on('click',function Tallenna(){
