@@ -338,11 +338,11 @@ $(document).ready(function(){
      		   alert( "Lisäys onnistui!" );
      		 });
      	   
-     /*	var varTapId= $('#tapahtuma_id').val();
+     	var varTapId= $('#tapahtuma_id').val();
      	   
      	   $.get( "tapahtumaosallistuja?tapahtuma_id="+varTapId+"&sukunimi="+varSname, function( data ) {
      		   alert( "Lisäys onnistui!" );
-     		 }); */
+     		 }); 
      });
 }); 
 </script>
