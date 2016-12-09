@@ -256,55 +256,41 @@ function redirect()
     <div class="ui list">
   <div class="item" >
 
-     <div class="content">
-    <button id="Join" class="positive ui button" style="float: right">Liity
-      <i class="right chevron icon"></i>
-      </button>
+   <div class="content">
+    <div id="" modelAttribute="osallistuja" method="post">
+
+<fieldset>	
+<legend><h3>Tietosi</h3></legend>
+ 
+ <div class="field">
+  <label for="etunimi"></label>
+  <input type="text" class="form-control" placeholder="Etunimi" id="etunimi">
   </div>
-   </div>
-  </div>
+ 
+ <div class="form-group">
+  <label for="sukunimi"></label>
+  <input type="text" class="form-control" placeholder="Sukunimi" id="sukunimi">
   </div>
   
-</div>
+ <div class="form-group">
+  <label for="email"></label>
+  <input type="email" class="form-control" placeholder="Sähköposti" id="email">
+ </div>
+ 
+<button id="liity" type="submit" class="positive ui button" value="${t.tapid}">Liity</button>
+</fieldset>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
 
 
-  
-<!-- Yksi tapahtuma loppuu -->
 
 </div>
 </c:forEach>
 </div>
-<!-- Event area loppuu -->
-
-<!-- liittyminen -->
-
-
-<div id="liity_lomake" modelAttribute="osallistuja" method="post" style="padding:10px; border-style:solid; border-line:1px; border-radius:10px">
-<fieldset>	
-<legend>Tietosi</legend>
- 
- <div class="form-group">
-  <label for="etunimi">Etunimi:</label>
-  <input type="text" class="form-control" id="etunimi">
-  </div>
- 
- <div class="form-group">
-  <label for="sukunimi">Sukunimi:</label>
-  <input type="text" class="form-control" id="sukunimi">
-  </div>
-  
- <div class="form-group">
-  <label for="email">Sähköposti:</label>
-  <input type="email" class="form-control" id="email">
- </div>
- 
-<button id="liity" type="submit" class="btn btn-default" value="${t.tapid}">Liity</button>
-</fieldset>
-</div>
-
-<!-- liittyminen loppuu -->
-
-
 
 <!-- Yksi tapahtuma loppuu -->
 
@@ -318,13 +304,13 @@ function redirect()
 $(document).ready(function(){
 	
 	//piilottaa liittymislomakkeen aluksi
-    $("#liity_lomake").hide();
+   // $("#liity_lomake").hide();
     
 	
 	//Avaa liittymislomakkeen painiketta painaessa
-    $("#Join").on('click',function(){
-        $("#liity_lomake").toggle('slow');
-     });
+  //  $("#Join").on('click',function(){
+    //    $("#liity_lomake").toggle('slow');
+     //});
       
     // Ottaa lomakkeelta tiedot ja välittää ne TapahtumaControllerille
     $("#liity").on('click',function Tallenna(){
@@ -338,11 +324,11 @@ $(document).ready(function(){
      		   alert( "Lisäys onnistui!" );
      		 });
      	   
-     /*	var varTapId= $('#tapahtuma_id').val();
+     	var varTapId= $('#tapahtuma_id').val();
      	   
      	   $.get( "tapahtumaosallistuja?tapahtuma_id="+varTapId+"&sukunimi="+varSname, function( data ) {
      		   alert( "Lisäys onnistui!" );
-     		 }); */
+     		 }); 
      });
 }); 
 </script>
