@@ -263,21 +263,21 @@ function redirect()
 <legend><h3>Tietosi</h3></legend>
  
  <div class="field">
-  <label for="etunimi"></label>
-  <input type="text" class="form-control" placeholder="Etunimi" id="etunimi">
+<!--   <label for="etunimi"></label> -->
+  <input type="text" class="form-control etunimi" placeholder="Etunimi" name="etunimi">
   </div>
  
- <div class="form-group">
-  <label for="sukunimi"></label>
-  <input type="text" class="form-control" placeholder="Sukunimi" id="sukunimi">
+ <div class="field">
+<!--   <label for="sukunimi"></label> -->
+  <input type="text" class="form-control sukunimi" placeholder="Sukunimi" name="sukunimi">
   </div>
   
- <div class="form-group">
-  <label for="email"></label>
-  <input type="email" class="form-control" placeholder="S‰hkˆposti" id="email">
+ <div class="field">
+<!--   <label for="email"></label> -->
+  <input type="email" class="form-control email" placeholder="S‰hkˆposti" name="email">
  </div>
  
-<button id="liity" type="submit" class="positive ui button" value="${t.tapid}">Liity</button>
+<button name="liity" type="submit" class="positive ui button liity" value="${t.tapid}">Liity</button>
 </fieldset>
 	</div>
 	</div>
@@ -313,10 +313,11 @@ $(document).ready(function(){
      //});
       
     // Ottaa lomakkeelta tiedot ja v‰litt‰‰ ne TapahtumaControllerille
-    $("#liity").on('click',function Tallenna(){
-     	var varFname= $('#etunimi').val();
-     	var varSname= $('#sukunimi').val();
-     	var varEmail= $('#email').val();
+    $('button[name="liity"]').on('click',function Tallenna(){
+    	 var $this = $(this);
+    	var varFname= $('.etunimi').val();
+     	var varSname= $('.sukunimi').val();
+     	var varEmail= $('.email').val();
      	var varTapId= $(this).attr("value");
      	
      	
