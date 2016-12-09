@@ -144,8 +144,7 @@ function redirect()
     </div>
     
  
- <input class="ui green submit button" type="submit" value="Lähe
- tä" onclick="redirect();" tabindex="0">
+ <input class="ui green submit button" type="submit" value="Lähetä" onclick="redirect();" tabindex="0" style="float: right">
   <div class="ui error message"></div>
   </div>
  
@@ -259,6 +258,7 @@ function redirect()
 
    <div class="content">
     <div id="" modelAttribute="osallistuja" method="post">
+
 <fieldset>	
 <legend><h3>Tietosi</h3></legend>
  
@@ -279,16 +279,15 @@ function redirect()
  
 <button id="liity" type="submit" class="positive ui button" value="${t.tapid}">Liity</button>
 </fieldset>
-</div>
-      
-  </div>
-   </div>
-  </div>
-</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
 
 
 
-</div>
 </div>
 </c:forEach>
 </div>
@@ -325,11 +324,11 @@ $(document).ready(function(){
      		   alert( "Lisäys onnistui!" );
      		 });
      	   
-     /*	var varTapId= $('#tapahtuma_id').val();
+     	var varTapId= $('#tapahtuma_id').val();
      	   
      	   $.get( "tapahtumaosallistuja?tapahtuma_id="+varTapId+"&sukunimi="+varSname, function( data ) {
      		   alert( "Lisäys onnistui!" );
-     		 }); */
+     		 }); 
      });
 }); 
 </script>
